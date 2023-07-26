@@ -1,0 +1,54 @@
+def suma(num1, num2)
+    num1 + num2
+  end
+  
+  def resta(num1, num2)
+    num1 - num2
+  end
+  
+  def multiplicacion(num1, num2)
+    num1 * num2
+  end
+  
+  def division(num1, num2)
+    num1 / num2
+  end
+  
+  puts "Bienvenido"
+  
+  loop do
+    puts "Ingrese el primer número:"
+    num1 = gets.chomp.to_f
+  
+    puts "Ingrese el segundo número:"
+    num2 = gets.chomp.to_f
+  
+    puts "Selecciona una operación:"
+    puts "1. Suma"
+    puts "2. Resta"
+    puts "3. Multiplicación"
+    puts "4. División"
+    puts "5. Salir"
+  
+    choice = gets.chomp.to_i
+  
+    case choice
+    when 1
+      puts "El resultado de la suma es: #{suma(num1, num2)}"
+    when 2
+      puts "El resultado de la resta es: #{resta(num1, num2)}"
+    when 3
+      puts "El resultado de la multiplicación es: #{multiplicacion(num1, num2)}"
+    when 4
+      if num2.zero?
+        puts "No es posible dividir entre cero. Ingresa otro segundo número."
+      else
+        puts "El resultado de la división es: #{division(num1, num2)}"
+      end
+    when 5
+      puts "¡Gracias por usar la calculadora!"
+      break
+    else
+      puts "Opción inválida. Por favor, selecciona una opción válida."
+    end
+  end
